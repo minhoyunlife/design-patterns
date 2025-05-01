@@ -4,8 +4,10 @@ import org.example.decorator.Beverage
 import org.example.decorator.Espresso
 import org.example.decorator.Mocha
 import org.example.decorator.Whip
-import org.example.factorymethod.ChicagoPizzaStore
-import org.example.factorymethod.NYPizzaStore
+//import org.example.factorymethod.ChicagoPizzaStore
+//import org.example.factorymethod.NYPizzaStore
+import org.example.abstractfactory.NYPizzaStore
+import org.example.abstractfactory.ChicagoPizzaStore
 import org.example.observer.CurrentConditionDisplay
 import org.example.observer.WeatherData
 import org.example.simplefactory.PizzaStore
@@ -61,4 +63,11 @@ fun main() {
 //
 //    val pizza2 = chStore.orderPizza("cheese")
 //    println(pizza2.name)
+
+//  example(abstract factory)
+//    val nyStore = NYPizzaStore()
+//    nyStore.orderPizza("cheese")
+//
+//    val chStore = ChicagoPizzaStore()
+//    chStore.orderPizza("clam")
 }
