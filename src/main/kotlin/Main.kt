@@ -8,6 +8,7 @@ import org.example.decorator.Whip
 //import org.example.factorymethod.NYPizzaStore
 import org.example.abstractfactory.NYPizzaStore
 import org.example.abstractfactory.ChicagoPizzaStore
+import org.example.command.*
 import org.example.observer.CurrentConditionDisplay
 import org.example.observer.WeatherData
 import org.example.simplefactory.PizzaStore
@@ -70,4 +71,32 @@ fun main() {
 //
 //    val chStore = ChicagoPizzaStore()
 //    chStore.orderPizza("clam")
+
+//  example(command)
+//    val remote = SimpleRemoteControl()
+//    val light = Light()
+//    val door = GarageDoor()
+//
+//    val lightOn = LightOnCommand(light)
+//    val lightOff = LightOffCommand(light)
+//    val doorUp = GarageDoorUpCommand(door)
+//
+//    remote.setCommand(lightOn)
+//    remote.buttonWasPressed()
+//
+//    remote.setCommand(doorUp)
+//    remote.buttonWasPressed()
+//
+    val remote = RemoteControl()
+
+    val light = Light()
+    val lightOn = LightOnCommand(light)
+    val lightOff = LightOffCommand(light)
+
+    remote.setCommand(0, lightOn, lightOff)
+
+    remote.onButtonWasPushed(0)
+    remote.undoButtonWasPushed()
+    remote.offButtonWasPushed(0)
+    remote.undoButtonWasPushed()
 }
