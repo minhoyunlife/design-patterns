@@ -13,6 +13,7 @@ import org.example.adapter.MallardDuck
 import org.example.adapter.TurkeyAdapter
 import org.example.adapter.WildTurkey
 import org.example.command.*
+import org.example.facade.*
 import org.example.observer.CurrentConditionDisplay
 import org.example.observer.WeatherData
 import org.example.simplefactory.PizzaStore
@@ -105,18 +106,32 @@ fun main() {
 //    remote.undoButtonWasPushed()
 //
 //  example(adapter)
-    val duck = MallardDuck()
-    val turkey = WildTurkey()
-    val turkeyAdapter = TurkeyAdapter(turkey)
+//    val duck = MallardDuck()
+//    val turkey = WildTurkey()
+//    val turkeyAdapter = TurkeyAdapter(turkey)
+//
+//    turkey.gobble()
+//    turkey.fly()
+//
+//    testDuck(duck)
+//    testDuck(turkeyAdapter)
+//}
+//
+//fun testDuck(duck: Duck) {
+//    duck.quack()
+//    duck.fly()
+//}
+//
+//  example(facade)
+    val homeTheater = HomeTheaterFacade(
+        Amplifier(),
+        StreamingPlayer(),
+        Projector(),
+        TheaterLights(),
+        Screen(),
+        PopcornPopper(),
+    )
 
-    turkey.gobble()
-    turkey.fly()
-
-    testDuck(duck)
-    testDuck(turkeyAdapter)
-}
-
-fun testDuck(duck: Duck) {
-    duck.quack()
-    duck.fly()
+    homeTheater.watchMovie("스타워즈")
+    homeTheater.endMovie()
 }
